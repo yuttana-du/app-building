@@ -1,4 +1,3 @@
-import "./App.css";
 import {
   BrowserRouter as Router,
   Route,
@@ -7,9 +6,10 @@ import {
 } from "react-router-dom";
 
 import Users from "./user/pages/Users";
-import Newplace from "./places/pages/NewPlace";
+import NewPlace from "./places/pages/NewPlace";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import UserPlaces from "./places/pages/UserPlaces";
+import UpdatePlace from "./places/pages/UpdatePlace";
 
 function App() {
   return (
@@ -24,7 +24,10 @@ function App() {
             <UserPlaces />
           </Route>
           <Route path="/places/new" exact={true}>
-            <Newplace />
+            <NewPlace />
+          </Route>
+          <Route path="/places/:placeId">
+            <UpdatePlace />
           </Route>
           <Redirect to="/" />
         </Switch>
